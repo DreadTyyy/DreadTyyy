@@ -106,6 +106,7 @@ window.addEventListener("scroll", () => {
     navigationBar.style.transform = "translateY(0%)";
     navigationBar.style.background = "transparent";
   } else if (posisiScroll > 0 && widthDoc < tabletDevice) {
+    navigationBar.style.transform = "translateY(0%)";
     navigationBar.style.background = "#191426";
   }
   const heroY = document.getElementById("header").clientHeight;

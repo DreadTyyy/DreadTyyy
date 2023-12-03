@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="description"
+      content="for 404 or not found page or page is still developing" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nothing Here</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Roboto+Condensed:wght@400;800&family=Slabo+27px&family=Sometype+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style/style.css" />
+
+    <style>
+      .not-found {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      h1 {
+        font-size: 10rem;
+        color: white;
+        font-weight: 800;
+      }
+      h1,
+      h2,
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        line-height: 1.5;
+        text-align: center;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      @media (max-width: 1080px) {
+        h1 {
+          font-size: 8rem;
+        }
+        h2 {
+          font-size: 1.4rem;
+        }
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 5rem;
+        }
+        h2 {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        .__submit-button {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-primary">
+      <div class="container-layout not-found">
+        <h1>Oops!</h1>
+        <h2>404 - PAGE NOT FOUND</h2>
+        <p>Sorry, the page you are looking for is still developing.</p>
+        <a
+          aria-label="back to homepage"
+          href="index.html"
+          class="__submit-button"
+          >GO TO HOMEPAGE</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
