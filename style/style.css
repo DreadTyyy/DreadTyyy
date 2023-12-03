@@ -27,6 +27,18 @@ body {
 .mobile {
   display: none;
 }
+.ALERT__HERE {
+  z-index: 9999;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  z-index: 1000; /* Ensure the overlay is above other elements */
+}
 .btn-up {
   position: fixed;
   display: flex;

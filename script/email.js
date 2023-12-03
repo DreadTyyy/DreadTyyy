@@ -1,6 +1,7 @@
 document
   .getElementById("mail-contact")
   .addEventListener("submit", function (event) {
+    event.preventDefault();
     let status;
 
     var formData = new FormData(this);
@@ -25,11 +26,11 @@ document
       status = "error";
       renderAlert(status);
     };
-
     xhr.send(formData);
   });
 
 function renderAlert(status) {
+  const contactSection = document.getElementById("contact");
   const alertHERE = document.querySelector(".ALERT__HERE");
   const alert = {
     success: {
@@ -73,7 +74,6 @@ function renderAlert(status) {
   buttonAlert.innerText = alert[status].button;
   buttonAlert.style.color = `${alert[status].style_color_btn}`;
   buttonAlert.classList.add("button-alert");
-  buttonAlert.setAttribute("onclick", close);
   alertSubmit.appendChild(headingAlert);
   alertSubmit.appendChild(div);
   alertSubmit.appendChild(buttonAlert);
@@ -81,14 +81,18 @@ function renderAlert(status) {
   location.assign("/#contact");
   document.body.style.overflow = "hidden";
   alertHERE.appendChild(alertSubmit);
+
+  buttonAlert?.addEventListener("click", closeAlert);
+
+  // membuat overlay
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  contactSection.appendChild(overlay);
 }
-function close() {
-  console.log("halo");
+function closeAlert() {
   const alertSubmit = document.querySelector(".alert-submit");
+  const overlay = document.querySelector(".overlay");
   alertSubmit.remove();
-  document.body.style.overflow = "auto";
-}
-const buttonAlert = document.querySelector(".button-alert");
-if (buttonAlert) {
-  buttonAlert.addEventListener("click", close);
+  overlay.remove();
+  document.body.style = "";
 }
