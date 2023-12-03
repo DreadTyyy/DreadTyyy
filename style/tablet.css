@@ -1,0 +1,112 @@
+@import url(style.css);
+@media (max-width: 1080px) {
+  :root {
+    --hero-font: 2.4rem;
+    --heading-font: 1.8rem;
+    --subheading-font: 1rem;
+    --paragraph: 0.8rem;
+    --title-font: 1rem;
+  }
+  /* konten bersama */
+  .dekstop,
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+  .container-layout {
+    padding: 4rem 0;
+    width: 80%;
+  }
+  .container-trapesium {
+    margin-top: -4rem;
+    width: 90%;
+    height: fit-content;
+    /* position: relative; */
+
+    .kotak {
+      bottom: 0%;
+      left: -0%;
+    }
+  }
+
+  .hero .title,
+  .about .title,
+  .gallery .title,
+  .project .title,
+  .skills .title,
+  .contact .title {
+    font-size: var(--title-font);
+    letter-spacing: 0px;
+  }
+  /* konten bersama end*/
+  /* navbar */
+  .hamburger {
+    display: block;
+  }
+  .logo,
+  .hamburger {
+    z-index: 999;
+  }
+  .nav-links {
+    position: absolute;
+    padding: 70px 0 2rem 0;
+    width: 100%;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%);
+    top: -600%;
+    background-color: var(--dark-color);
+    z-index: 9;
+    transition: 300ms ease-in-out;
+  }
+  .nav-links.show-nav {
+    top: 0 !important;
+  }
+  /* navbar end*/
+  /* hero */
+  .hero {
+    h5 {
+      font-size: var(--hero-font);
+    }
+    p {
+      font-size: var(--subheading-font);
+    }
+  }
+  /* hero end */
+  .about p {
+    width: 80%;
+  }
+  /* about end */
+  /* gallery */
+  .gallery-content {
+    flex-wrap: wrap;
+  }
+  /* gallery end */
+  .image-body {
+    position: relative;
+  }
+  .photos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .image-body {
+    width: 100%;
+    bottom: 15%;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  }
+  .visit-project {
+    display: none;
+  }
+  /* skills */
+  .skills {
+    article {
+      h5.subhead {
+        font-size: var(--heading-font);
+      }
+    }
+  }
+  /* skills end */
+}

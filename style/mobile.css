@@ -1,0 +1,145 @@
+@import url(style.css);
+@import url(tablet.css);
+@media (max-width: 458px) {
+  :root {
+    --hero-font: 2rem;
+    --heading-font: 1.4rem;
+    --subheading-font: 1.2rem;
+    --paragraph: 1rem;
+    --title-font: 1rem;
+  }
+  .mobile {
+    display: block;
+  }
+  .tablet,
+  .dekstop {
+    display: none;
+  }
+  /* konten bersama */
+  .container-layout {
+    padding: 4rem 1rem;
+    width: 100%;
+  }
+  .container-trapesium {
+    padding: 0;
+    margin-top: 0rem !important;
+    clip-path: none;
+    background: transparent;
+
+    .kotak {
+      display: none;
+    }
+  }
+  .container-flex {
+    /* background: #000; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .hero .title,
+  .about .title,
+  .gallery .title,
+  .project .title,
+  .skills .title,
+  .contact .title {
+    font-size: var(--title-font);
+    letter-spacing: 0px;
+    margin-right: 2rem;
+  }
+  .timeline {
+    right: 5%;
+  }
+  .bullets::after {
+    left: 95%;
+  }
+  /* konten bersama end*/
+  /* hero */
+  .hero h5 {
+    font-size: var(--hero-font);
+  }
+
+  .hero .text-action {
+    font-size: var(--subheading-font);
+  }
+  span#top-skill {
+    display: block;
+    width: 100%;
+  }
+  /* hero end */
+  /* about */
+  .about {
+    .container-trapesium {
+      .body-about {
+        width: 100%;
+        margin-right: 0 !important;
+        justify-content: center !important;
+      }
+    }
+  }
+  .about p {
+    width: 95%;
+    text-align: justify;
+  }
+  .profil-about {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  /* about end */
+  /* gallery  */
+
+  .gallery-content img {
+    width: 150px;
+    height: auto !important;
+  }
+  /* gallery end */
+  /* project */
+  .image-body {
+    position: absolute;
+    transform: translateX(0);
+    left: -5%;
+    width: 100%;
+    bottom: 10%;
+  }
+  .image-project {
+    max-width: 300px;
+    height: 100%;
+  }
+  .image-project::before {
+    left: 0;
+    top: -30%;
+  }
+  .image-landscape {
+    max-width: 300px;
+    height: 100%;
+  }
+  .photos {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .visit-project {
+    display: none;
+  }
+  /* project end */
+  /* skills */
+  .tag-item {
+    gap: 1rem;
+  }
+  /* skills end */
+  /* contact */
+  .contact .body-about p {
+    font-size: var(--paragraph);
+    width: 90%;
+  }
+  .__form-mail-contact {
+    font-size: var(--paragraph);
+  }
+  .__head-mail-contact span,
+  .group-textarea {
+    font-size: var(--paragraph);
+  }
+  /* contact end */
+}

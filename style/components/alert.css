@@ -1,0 +1,49 @@
+#contact {
+  position: relative;
+}
+.alert-submit {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 400px;
+  max-width: 300px;
+  width: 300px;
+  gap: 2rem;
+  border-radius: 10px;
+  animation: toptodown 1000ms 500ms ease-in;
+
+  z-index: 9999;
+  transition: 300ms ease-in;
+}
+.alert-submit h2 {
+  color: white;
+  font-size: 3rem;
+}
+.alert-submit p {
+  font-weight: 500;
+}
+.alert-submit button {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  background-color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes toptodown {
+  from {
+    top: -50%;
+  }
+  to {
+    top: 40%;
+  }
+}
