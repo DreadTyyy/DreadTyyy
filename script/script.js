@@ -1,18 +1,22 @@
 import getDataProject from "./data.js";
+import renderProjectImg from "./components/ProjectImage.js";
+import renderAlert from "./components/AlertSubmit.js";
+import sendEmail from "./email.js";
+
 const dataProjects = getDataProject();
 const widthDoc = document.body.offsetWidth;
 const tabletDevice = 1080;
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
   dataProjects.map((item) => {
-    renderProjectImg(item);
+    renderProjectImg(item, widthDoc, tabletDevice);
   });
 
   const timeline = document.getElementById("timeline");
-  const topSkill = document.getElementById("top-skill");
   const heightDoc = document.getElementsByTagName("body")[0].clientHeight;
   timeline.style.height = `${heightDoc}px`;
 
+  const topSkill = document.getElementById("top-skill");
   const skills = ["Graphic Designer", "Front End Developer"];
 
   let arr;
@@ -95,8 +99,9 @@ window.onload = () => {
   }, 5000);
 
   topSkill.innerHTML = awalan;
-};
+});
 
+// event ketika scroll
 const navigationBar = document.querySelector("#navbar");
 window.addEventListener("scroll", () => {
   const posisiScroll = window.pageYOffset;
@@ -120,6 +125,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// event ketika mouse hover ke bagian atas untuk nabar
 window.addEventListener("mousemove", (e) => {
   if (window.pageYOffset > 0) {
     const posisiY = e.screenY;
@@ -131,71 +137,7 @@ window.addEventListener("mousemove", (e) => {
   }
 });
 
-const renderProjectImg = (data) => {
-  let style = "";
-  if (widthDoc > tabletDevice) {
-    if (data.id == 2) {
-      style = "margin-top: 4rem;";
-    } else if (data.id > 2) {
-      let translateX = 0;
-      const translateY = data.id % 2 == 0 ? 8 : 2;
-      const baris = Math.ceil(data.id / 2);
-      if (baris % 2 == 0) {
-        translateX = 4;
-      }
-      style = `margin-top: ${translateY}rem; margin-left:${translateX}rem;`;
-    }
-  }
-
-  const photos = document.querySelector(".photos");
-
-  const imageProject = document.createElement("div");
-  imageProject.classList.add("image-project");
-  imageProject.setAttribute("data-style-type", data.id);
-  imageProject.setAttribute("style", style);
-
-  const image = document.createElement("img");
-  Object.assign(image, {
-    className: data.size ? "image-landscape" : "image-portrait",
-    src: `assets/${data.image}`,
-    alt: data.alt,
-  });
-  image.setAttribute("onmousemove", "effectOnImage(event,this)");
-  image.setAttribute("onmouseout", "notEffectOnImage(this)");
-
-  const imageBody = document.createElement("div");
-  imageBody.classList.add("image-body");
-
-  const imageh5 = document.createElement("h5");
-  imageh5.innerText = data.title;
-
-  const visitProject = document.createElement("div");
-  visitProject.classList.add("visit-project");
-  if (data.github && data.link) {
-    const links = [data.github, data.link];
-    const icons = ["fa-brands", "fa-github", "fa-solid", "fa-link"];
-    let j = 0;
-    for (let i = 0; i < 2; i++) {
-      const link = document.createElement("a");
-      link.setAttribute("href", links[i]);
-      link.setAttribute("target", "_blank");
-      const icon = document.createElement("i");
-      icon.classList.add(icons[j]);
-      j++;
-      icon.classList.add(icons[j]);
-      j++;
-      link.appendChild(icon);
-      visitProject.appendChild(link);
-    }
-  }
-
-  imageBody.appendChild(imageh5);
-  imageBody.appendChild(visitProject);
-  imageProject.appendChild(image);
-  imageProject.appendChild(imageBody);
-  photos.appendChild(imageProject);
-};
-
+// hamburger display
 const hamburger = document.getElementById("hamburger");
 const links = document.querySelectorAll(".nav-links > li");
 const navLinks = document.querySelector(".nav-links");
@@ -212,3 +154,11 @@ links.forEach((link) => {
     navLinks.classList.remove("show-nav");
   });
 });
+
+// function send data email
+document
+  .getElementById("mail-contact")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    sendEmail(this, renderAlert);
+  });
