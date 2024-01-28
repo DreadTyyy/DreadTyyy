@@ -2,9 +2,9 @@ const getDataProject = () => {
   const data = [
     {
       id: "01",
-      title: "Togheter App",
-      alt: "togheter",
-      image: "togheter.png",
+      title: "Together App",
+      alt: "together",
+      image: "together.png",
       github: "https://github.com/DreadTyyy/",
       link: "https://app-togheter-lac.vercel.app/",
       size: true,
@@ -17,7 +17,7 @@ const getDataProject = () => {
       size: true,
     },
     {
-      id: "02",
+      id: "03",
       title: "Movie Star",
       alt: "movie star",
       image: "design2.png",
@@ -26,7 +26,7 @@ const getDataProject = () => {
       size: true,
     },
     {
-      id: "03",
+      id: "04",
       title: "Acciojob Clone",
       alt: "acciojob",
       image: "design6.png",
@@ -35,7 +35,7 @@ const getDataProject = () => {
       size: true,
     },
     {
-      id: "04",
+      id: "05",
       title: "Atround Redesign",
       alt: "atround",
       image: "atround.png",
@@ -44,7 +44,7 @@ const getDataProject = () => {
       size: true,
     },
     {
-      id: "05",
+      id: "06",
       title: "Yummy Restaurant",
       alt: "yummy restaurant",
       image: "design3.png",
@@ -53,7 +53,7 @@ const getDataProject = () => {
       size: true,
     },
     {
-      id: "06",
+      id: "07",
       title: "Bookshelf App",
       alt: "bookshelf app",
       image: "design4.png",
@@ -62,7 +62,7 @@ const getDataProject = () => {
       size: true,
     },
     {
-      id: "07",
+      id: "08",
       title: "Dread Notes",
       alt: "dread notes",
       image: "design5.png",
